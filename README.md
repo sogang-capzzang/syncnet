@@ -24,9 +24,9 @@ pip install -r requirements.txt
 
 In addition, `ffmpeg` is required.
 
-## Evaluation: lib sync video score (default: cosine 유사도)
+## Evaluation: lib sync video score (default: cosine 유사도) -> SyncNetInstance.py
 
-SyncNet demo:
+SyncNet demo: --videofile {video위치}
 ```
 python demo_syncnet.py --videofile data/example.avi --tmp_dir /path/to/temp/directory
 ```
