@@ -6,15 +6,25 @@ This repository contains the demo for the audio-to-video synchronisation network
 
 Please cite the paper below if you make use of the software. 
 
+## Git Clone
+```
+git clone https://github.com/sogang-capzzang/syncnet.git
+cd syncnet
+```
+
 ## Dependencies
 ```
 pip install -r requirements.txt
 ```
 
+## Model Download
+```
+./download_model.sh
+```
+
 In addition, `ffmpeg` is required.
 
-
-## Demo
+## Evaluation: lib sync video score (default: cosine 유사도)
 
 SyncNet demo:
 ```
@@ -23,29 +33,10 @@ python demo_syncnet.py --videofile data/example.avi --tmp_dir /path/to/temp/dire
 
 Check that this script returns:
 ```
-AV offset:      3 
-Min dist:       5.353
-Confidence:     10.021
+AV offset: 	3 
+Max sim: 	0.862
+Confidence: 	0.862
 ```
-
-Full pipeline:
-```
-sh download_model.sh
-python run_pipeline.py --videofile /path/to/video.mp4 --reference name_of_video --data_dir /path/to/output
-python run_syncnet.py --videofile /path/to/video.mp4 --reference name_of_video --data_dir /path/to/output
-python run_visualise.py --videofile /path/to/video.mp4 --reference name_of_video --data_dir /path/to/output
-```
-
-Outputs:
-```
-$DATA_DIR/pycrop/$REFERENCE/*.avi - cropped face tracks
-$DATA_DIR/pywork/$REFERENCE/offsets.txt - audio-video offset values
-$DATA_DIR/pyavi/$REFERENCE/video_out.avi - output video (as shown below)
-```
-<p align="center">
-  <img src="img/ex1.jpg" width="45%"/>
-  <img src="img/ex2.jpg" width="45%"/>
-</p>
 
 ## Publications
  
