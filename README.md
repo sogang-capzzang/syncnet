@@ -22,7 +22,12 @@ pip install -r requirements.txt
 ./download_model.sh
 ```
 
+## Input Preprocessing 
 In addition, `ffmpeg` is required.
+input 영상을 224,224로 scale
+```
+!ffmpeg -i /content/aa.mp4 -vf "scale=224:224" /content/bb.mp4
+```
 
 ## Evaluation: lib sync video score (default: cosine 유사도) -> SyncNetInstance.py
 
