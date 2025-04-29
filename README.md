@@ -42,6 +42,7 @@ AV offset: 	3
 Max sim: 	0.862
 Confidence: 	0.862
 ```
+confidence score 범위: 0 ~ 1 (1에 가까울 수록 좋음)
 
 ## Publications
  
