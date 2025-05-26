@@ -26,14 +26,14 @@ pip install -r requirements.txt
 In addition, `ffmpeg` is required.
 input 영상을 224,224로 scale
 ```
-!ffmpeg -i /content/aa.mp4 -vf "scale=224:224" /content/bb.mp4
+ffmpeg -i data/example.avi -vf "scale=224:224" data/example_scaled.avi
 ```
 
 ## Evaluation: lib sync video score (default: cosine 유사도) -> SyncNetInstance.py
 
 SyncNet demo: --videofile {video위치}
 ```
-python demo_syncnet.py --videofile data/example.avi --tmp_dir /path/to/temp/directory
+python demo_syncnet.py --videofile data/example_scaled.avi --tmp_dir /tmp
 ```
 
 Check that this script returns:
